@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watches - NIMRA COLLECTION👜</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Sticky Header Navigation -->
+    <header class="sticky-header">
+        <div class="logo"><a href="index.html">NIMRA COLLECTION👜</a></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mobile-accessories.html">Mobile Accessories</a></li>
+                <li><a href="jwelery.html">Jewelry</a></li>
+                <li><a href="watches.html" class="active">Watches</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon" id="cart-btn">
+            🛒 Cart (<span id="cart-count">0</span>)
+        </div>
+    </header>
+
+    <!-- Watches Items Section -->
+    <section class="products-section">
+        <h2>Luxury Watches Collection</h2>
+        <div class="product-grid">
+
+            <!-- Watch Item 1 -->
+            <div class="product-card">
+                <!-- AAP APNI WATCH 1 KI IMAGE PATH 'src' MEIN DAALEIN -->
+                <img src="min.png" alt="Classic Leather Watch">
+                <h3> Silver watch</h3>
+                <p class="price">PKR 1,700</p>
+                <button class="add-to-cart-btn" data-name="Classic Leather Watch" data-price="1700">Add to Cart</button>
+            </div>
+
+            <!-- Watch Item 2 -->
+            <div class="product-card">
+                <!-- AAP APNI WATCH 2 KI IMAGE PATH 'src' MEIN DAALEIN -->
+                <img src="op.png" alt="Silver Chronograph">
+                <h3>Classic black Watch</h3>
+                <p class="price">PKR 2,000</p>
+                <button class="add-to-cart-btn" data-name="Silver Chronograph" data-price="2000">Add to Cart</button>
+            </div>
+
+        </div>
+
+
+          <h2> women Luxury watches</h2>
+        <div class="product-grid">
+
+            <!-- Watch Item 1 -->
+            <div class="product-card">
+                <!-- AAP APNI WATCH 1 KI IMAGE PATH 'src' MEIN DAALEIN -->
+                <img src="gil.png" alt="Classic Leather Watch">
+                <h3> black unique watch</h3>
+                <p class="price">PKR 1,100</p>
+                <button class="add-to-cart-btn" data-name="Classic Leather Watch" data-price="1100">Add to Cart</button>
+            </div>
+
+            <!-- Watch Item 2 -->
+            <div class="product-card">
+                <!-- AAP APNI WATCH 2 KI IMAGE PATH 'src' MEIN DAALEIN -->
+                <img src="imag.jpg" alt="Silver Chronograph">
+                <h3>Jewelry watch for girl's</h3>
+                <p class="price">PKR 1,000</p>
+                <button class="add-to-cart-btn" data-name="Silver Chronograph" data-price="1000">Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Order Checkout Modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2>Confirm Order (COD)</h2>
+            <div id="cart-items-list"></div>
+            <p class="total-price-text">Total: PKR <span id="cart-total">0</span></p>
+
+            <form id="order-form">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter full name" required>
+
+                <label for="phone">Phone Number (WhatsApp)</label>
+                <input type="tel" id="phone" placeholder="0300 1234567" required>
+
+                <label for="address">Delivery Address</label>
+                <textarea id="address" placeholder="Complete Address & City" rows="3" required></textarea>
+
+                <button type="submit" class="submit-order-btn">Send Order via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+  <footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h3>NIMRA COLLECTION👜</h3>
+            <p>Your Premium Destination for Accessories, Jewelry & Watches</p>
+        </div>
+
+        <div class="footer-info">
+            <div class="footer-info-item">
+                📍 <strong>Address:</strong> Narowal city
+            </div>
+            <div class="footer-info-item">
+                📞 <strong>WhatsApp:</strong> +92 3495534491
+            </div>
+            <div class="footer-info-item">
+                🚚 <strong>Delivery:</strong> 💸Half payment on advance Delivery (All Pakistan)
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 NIMRA COLLECTION. All rights reserved✔.</p>
+        </div>
+    </div>
+</footer>
+    <script src="index.js"></script>
+</body>
+</html>

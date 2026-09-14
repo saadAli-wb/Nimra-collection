@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Accessories - NIMRA COLLECTION👜</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="sticky-header">
+        <div class="logo"><a href="index.html">NIMRA COLLECTION👜</a></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mobile-accessories.html" class="active">Mobile Accessories</a></li>
+                <li><a href="jwelery.html">Jewelry</a></li>
+                <li><a href="watches.html">Watches</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon" id="cart-btn">
+            🛒 Cart (<span id="cart-count">0</span>)
+        </div>
+    </header>
+
+    <!-- Main Products Section -->
+    <section class="products-section">
+        <h2> All type Mobile Accessories Available</h2>
+
+        <div class="product-grid">
+
+            <!-- Card 1 (Line 1 - Left) -->
+            <div class="product-card">
+                <img src="airbuds.png" alt="Airbuds pro 2">
+                <h3>Airbuds pro 2</h3>
+                <p class="price">PKR 1,200</p>
+                <button class="add-to-cart-btn" data-name="Airbuds pro 2" data-price="2200">Add to Cart</button>
+            </div>
+
+            <!-- Card 2 (Line 1 - Right) -->
+            <div class="product-card">
+                <img src="m10.png" alt="Airbuds pro 2">
+                <h3>M10 airbuds classis sound</h3>
+                <p class="price">PKR 1,200</p>
+                <button class="add-to-cart-btn" data-name="Airbuds pro 2" data-price="1200">Add to Cart</button>
+            </div>
+
+            <!-- Card 3 (Line 2 - Left) -->
+            <div class="product-card">
+                <img src="charger.png" alt="Fast Charger">
+                <h3>Fast Charger (Mi)</h3>
+                <p class="price">PKR 2,200</p>
+                <button class="add-to-cart-btn" data-name="Fast Charger 35W" data-price="2200">Add to Cart</button>
+            </div>
+
+            <!-- Card 4 (Line 2 - Right) -->
+            <div class="product-card">
+                <img src="power.png" alt="Power Bank">
+                <h3>Power Bank 10000mAh</h3>
+                <p class="price">PKR 3,500</p>
+                <button class="add-to-cart-btn" data-name="Power Bank 10000mAh" data-price="3500">Add to Cart</button>
+            </div>
+
+            <!-- Card 5 (Line 3 - Left) -->
+            <div class="product-card">
+                <img src="lead.png" alt="Data Cable">
+                <h3>Type-C Fast Cable</h3>
+                <p class="price">PKR 300</p>
+                <button class="add-to-cart-btn" data-name="Type-C Fast Cable" data-price="300">Add to Cart</button>
+            </div>
+
+            <!-- Card 6 (Line 3 - Right) -->
+            <div class="product-card">
+                <img src="dust.png" alt="Phone Holder">
+                <h3>C-tap dust plug</h3>
+                <p class="price">PKR 600</p>
+                <button class="add-to-cart-btn" data-name="dust plug" data-price="600">Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2>Confirm Order (COD)</h2>
+            <div id="cart-items-list"></div>
+            <p class="total-price-text">Total: PKR <span id="cart-total">0</span></p>
+
+            <form id="order-form">
+                <input type="text" id="name" placeholder="Enter full name" required>
+                <input type="tel" id="phone" placeholder="0300 1234567" required>
+                <textarea id="address" placeholder="Complete Address & City" rows="3" required></textarea>
+                <button type="submit" class="submit-order-btn">Send Order via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+  <footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h3>NIMRA COLLECTION👜</h3>
+            <p>Your Premium Destination for Accessories, Jewelry & Watches</p>
+        </div>
+
+        <div class="footer-info">
+            <div class="footer-info-item">
+                📍 <strong>Address:</strong>Narowal city
+            </div>
+            <div class="footer-info-item">
+                📞 <strong>WhatsApp:</strong> +92 3495534491
+            </div>
+            <div class="footer-info-item">
+                🚚 <strong>Delivery:</strong> 💸Half payment on advance Delivery(All Pakistan)
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 NIMRA COLLECTION. All rights reserved👍.</p>
+        </div>
+    </div>
+</footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
