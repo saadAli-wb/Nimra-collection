@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Beauty & Care | NIMRA COLLECTION</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: white;
+        }
+
+        /* HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 6%;
+            background: rgba(10,10,10,0.95);
+            border-bottom: 1px solid #333;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            color: #d4af37;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            background:
+                radial-gradient(circle at center, #29200b 0%, #111 35%, #050505 75%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero small {
+            color: #d4af37;
+            letter-spacing: 4px;
+            font-size: 13px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 80px);
+            margin: 18px 0;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 span {
+            color: #d4af37;
+        }
+
+        .hero p {
+            color: #bbb;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        /* PRODUCTS */
+        .products-section {
+            padding: 70px 6%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title span {
+            color: #d4af37;
+            font-size: 12px;
+            letter-spacing: 4px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            margin-top: 12px;
+        }
+
+        .section-title p {
+            color: #999;
+            margin-top: 10px;
+        }
+
+        .category-title {
+            font-size: 27px;
+            margin: 55px 0 25px;
+            padding-left: 15px;
+            border-left: 3px solid #d4af37;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .product-card {
+            background: linear-gradient(145deg, #171717, #0c0c0c);
+            border: 1px solid #292929;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: 0.4s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: #d4af37;
+            box-shadow: 0 15px 40px rgba(212,175,55,0.18);
+        }
+
+        .product-image {
+            height: 260px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:
+                radial-gradient(circle, #29200c, #121212 65%, #080808);
+        }
+
+        .product-icon {
+            font-size: 105px;
+            filter: drop-shadow(0 10px 15px rgba(212,175,55,0.2));
+            transition: 0.4s;
+        }
+
+        .product-card:hover .product-icon {
+            transform: scale(1.12) rotate(3deg);
+        }
+
+        .product-info {
+            padding: 23px;
+        }
+
+        .product-info small {
+            color: #d4af37;
+            letter-spacing: 2px;
+            font-size: 10px;
+        }
+
+        .product-info h3 {
+            font-size: 20px;
+            margin: 8px 0;
+        }
+
+        .product-info p {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .price {
+            color: #d4af37;
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        .order-btn {
+            border: 1px solid #d4af37;
+            background: transparent;
+            color: #d4af37;
+            padding: 10px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .order-btn:hover {
+            background: #d4af37;
+            color: #000;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 40px;
+            padding: 45px 6%;
+            text-align: center;
+            border-top: 1px solid #292929;
+            background: #070707;
+        }
+
+        .footer-logo {
+            color: #d4af37;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        footer p {
+            color: #777;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 25px;
+            color: white;
+            text-decoration: none;
+            border: 1px solid #444;
+            padding: 11px 22px;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .back-home:hover {
+            border-color: #d4af37;
+            color: #d4af37;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            header {
+                padding: 16px 5%;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products-section {
+                padding: 50px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .hero {
+                min-height: 380px;
+            }
+
+            .product-image {
+                height: 230px;
+            }
+        }
+
+        @media (min-width: 801px) and (max-width: 1100px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo">
+            NIMRA COLLECTION
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="mobile-accessories.html">Mobile Accessories</a>
+            <a href="jwelery.html">Jewelry</a>
+            <a href="watches.html">Watches</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <small>NIMRA COLLECTION • BEAUTY & CARE</small>
+
+            <h1>
+                Beauty <span>&</span> Care
+            </h1>
+
+            <p>
+                Explore our carefully selected beauty and personal care
+                collection, including face wash, sun block and shampoo.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+    <section class="products-section">
+
+        <div class="section-title">
+
+            <span>EXPLORE COLLECTION</span>
+
+            <h2>Beauty Essentials</h2>
+
+            <p>
+                Choose your favorite product and order directly on WhatsApp.
+            </p>
+
+        </div>
+
+
+        <!-- FACE WASH -->
+
+        <h2 class="category-title">
+            Face Wash
+        </h2>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+
+                <div class="product-image">
+                    <div class="product-icon">🧴</div>
+                </div>
+
+                <div class="product-info">
+
+                    <small>FACE CARE</small>
+
+                    <h3>Gentle Face Wash</h3>
+
+                    <p>
+                        A simple everyday face cleansing option.
+                    </p>
+
+                    <div class="price-row">
+
+                        <span class="price">
+                            PKR 899
+                        </span>
+
+                        <a class="order-btn"
+                           href="https://wa.me/923495534491?text=Hello%20NIMRA%20COLLECTION%2C%20I%20want%20to%20order%20Gentle%20Face%20Wash%20for%20PKR%20899."
+                           target="_blank">
+                            Order
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <div class="product-image">
+                    <div class="product-icon">🫧</div>
+                </div>
+
+                <div class="product-info">
+
+                    <small>FACE CARE</small>
+
+                    <h3>Daily Clean Face Wash</h3>
+
+                    <p>
+                        Fresh cleansing choice for your daily routine.
+                    </p>
+
+                    <div class="price-row">
+
+                        <span class="price">
+                            PKR 999
+                        </span>
+
+                        <a class="order-btn"
+                           href="https://wa.me/923495534491?text=Hello%20NIMRA%20COLLECTION%2C%20I%20want%20to%20order%20Daily%20Clean%20Face%20Wash%20for%20PKR%20999."
+                           target="_blank">
+                            Order
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <div class="product-image">
+                    <div class="product-icon">✨</div>
+                </div>
+
+                <div class="product-info">
+
+                    <small>FACE CARE</small>
+
+                    <h3>Premium Face Cleanser</h3>
+
+                    <p>
+                        A premium addition to your personal care routine.
+                    </p>
+
+                    <div class="price-row">
+
+                        <span class="price">
+                            PKR 1,199
+                        </span>
+
+                        <a class="order-btn"
+                           href="https://wa.me/923495534491?text=Hello%20NIMRA%20COLLECTION%2C%20I%20want%20to%20order%20Premium%20Face%20Cleanser%20for%20PKR%201199."
+                           target="_blank">
+                            Order
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SUN BLOCK -->
+
+        <h2 class="category-title">
+            Sun Block
+        </h2>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+
+                <div class="product-image">
+                    <div class="product-icon">☀️</div>
+                </div>
+
+                <div class="product-info">
+
+                    <small>SUN CARE</small>
+
+                    <h3>Daily Sun Block</h3>
+
+                    <p>
+                        A practical sun-care option for everyday outdoor use.
+                    </p>
+
+                    <div class="price-row">
+
+                        <span class="price">
+                            PKR 1,099
+                        </span>
+
+                        <a class="order-btn"
+                           href="https://wa.me/923495534491?text=Hello%20NIMRA%20COLLECTION%2C%20I%20want%20to%20order%20Daily%20Sun%20Block%20for%20PKR%201099."
+                           target="_blank">
+                            Order
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <div class="product-image">
+                    <div class="product-icon">🌤️</div>
+                </div>
+
+                <div class="product-info">
+
+                    <small>SUN CARE</small>
+
+                    <h3>Light Sun Protection</h3>
+
+                    <p>
+                        Lightweight sun-care product for your daily routine.
+                    </p>
+
+                    <div class="price-row">
+
+                        <span class="price">
+                            PKR 1,299
+                        </span>
+
+                        <a class="order-btn"
+                           href="https://wa.me/923495534491?text=Hello%20NIMRA%20COLLECTION%2C%20I%20want%20to%20order%20Light%20Sun%20Protection%20for%20PKR%201299."
+                           target="_blank">
+                            Order
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <div class="product-image">
+                    <div class="product-icon">🌞</div>
+                </div>
+
+                <div class="product-info">
+
+                    <small>SUN CARE</small>
+
+                    <h3>Premium Sun Block</h3>
+
+                    <p>
+                        Premium sun-care choice for regular outdoor activities.
+                    </p>
+
+                    <div class="price-row">
+
+                        <span class="price">
+                            PKR 1,499
+                        </span>
+
+                        <a class="order-btn"
+                           href="https://wa.me/923495534491?text=Hello%20NIMRA%20COLLECTION%2C%20I%20want%20to%20order%20Premium%20Sun%20Block%20for%20PKR%201499."
+                           target="_blank">
+                            Order
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHAMPOO -->
+
+        <h2 class="category-title">
+            Shampoo
+        </h2>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+
+                <div class="product-image">
+                    <div class="product-icon">🧴</div>
+                </div>
+
+                <div class="product-info">
+
+                    <small>HAIR CARE</small>
+
+                    <h3>Daily Care Shampoo</h3>
+
+                    <p>
+                        Everyday hair-care option for your regular routine.
+                    </p>
+
+                    <div class="price-row">
+
+                        <span class="price">
+                            PKR 799
+                        </span>
+
+                        <a class="order-btn"
+                           href="https://wa.me/923495534491?text=Hello%20NIMRA%20COLLECTION%2C%20I%20want%20to%20order%20Daily%20Care%20Shampoo%20for%20PKR%20799."
+                           target="_blank">
+                            Order
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <div class="product-image">
+                    <div class="product-icon">🫧</div>
+                </div>
+
+                <div class="product-info">
+
+                    <small>HAIR CARE</small>
+
+                    <h3>Fresh Care Shampoo</h3>
+
+                    <p>
+                        A fresh and simple choice for everyday hair care.
+                    </p>
+
+                    <div class="price-row">
+
+                        <span class="price">
+                            PKR 949
+                        </span>
+
+                        <a class="order-btn"
+                           href="https://wa.me/923495534491?text=Hello%20NIMRA%20COLLECTION%2C%20I%20want%20to%20order%20Fresh%20Care%20Shampoo%20for%20PKR%20949."
+                           target="_blank">
+                            Order
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <div class="product-image">
+                    <div class="product-icon">✨</div>
+                </div>
+
+                <div class="product-info">
+
+                    <small>HAIR CARE</small>
+
+                    <h3>Premium Shampoo</h3>
+
+                    <p>
+                        Premium hair-care addition for your personal routine.
+                    </p>
+
+                    <div class="price-row">
+
+                        <span class="price">
+                            PKR 1,199
+                        </span>
+
+                        <a class="order-btn"
+                           href="https://wa.me/923495534491?text=Hello%20NIMRA%20COLLECTION%2C%20I%20want%20to%20order%20Premium%20Shampoo%20for%20PKR%201199."
+                           target="_blank">
+                            Order
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            NIMRA COLLECTION
+        </div>
+
+        <p>
+            Premium accessories, jewelry, watches & beauty care.
+        </p>
+
+        <p>
+            📱 WhatsApp: +92 349 5534491
+        </p>
+
+        <a href="index.html" class="back-home">
+            ← Back to Home
+        </a>
+
+    </footer>
+
+</body>
+</html>
